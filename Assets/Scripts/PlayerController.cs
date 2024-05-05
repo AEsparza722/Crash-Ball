@@ -6,8 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     float moveX;
     [SerializeField] float playerSpeed;
-    public bool hasPowerUp; //
-
+    public bool hasPowerUp; 
     Rigidbody rb;
 
     private void Awake()

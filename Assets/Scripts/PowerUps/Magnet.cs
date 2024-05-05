@@ -36,7 +36,6 @@ public class Magnet : MonoBehaviour
                     collider.GetComponent<Rigidbody>().AddForce(forceDir.normalized * force, ForceMode.Force);
                 }
             }
-        }
-       
+        }       
     }
 }

@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: Magnet
+  cooldown: 10
   magnet: {fileID: -2421430230367451217, guid: e7bedf03ee6525e48a43e3057520b67e, type: 3}

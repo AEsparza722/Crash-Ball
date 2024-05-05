@@ -5,6 +5,17 @@ using UnityEngine;
 public abstract class PowerUp : MonoBehaviour
 {
     public string id;
+    public float cooldown;
 
-    public abstract void EnablePowerUp(PlayerController player);
+
+    public virtual void EnablePowerUp(PlayerController player)
+    {
+        GetComponentInChildren<MeshRenderer>().enabled = false;
+        GetComponentInChildren<SphereCollider>().enabled = false;
+        
+
+    }
+    
+
+
 }
