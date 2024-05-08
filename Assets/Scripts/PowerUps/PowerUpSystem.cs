@@ -35,7 +35,7 @@ public class PowerUpSystem : MonoBehaviour
         {
             randomCannon.powerUp = powerUpFactory.CreatePowerUp(powerUpFactory.GetRandomPowerUpID(), randomCannon.transform);
         }
-        yield return new WaitForSeconds(UnityEngine.Random.Range(10f, 30f));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(20f, 30f)); //Espera para aparecer mas powerups
         canGeneratePowerUp = true;
     }
 
@@ -54,7 +54,7 @@ public class PowerUpSystem : MonoBehaviour
     IEnumerator WaitForPowerUp()
     {
         isPowerUpActive = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(10f); //Duracion del powerup
         isPowerUpActive = false;
     }
 
