@@ -7,7 +7,6 @@ public abstract class PowerUp : MonoBehaviour
     public string id;
     public float cooldown;
 
-
     public virtual void EnablePowerUp(PlayerController player)
     {
         GetComponentInChildren<MeshRenderer>().enabled = false;

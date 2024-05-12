@@ -7,7 +7,6 @@ public class PowerUpSystem : MonoBehaviour
 {
     [SerializeField] PowerUpFactory powerUpFactory;
     [SerializeField] CannonSystem cannons;
-    [SerializeField] List<PlayerController> players;
     public bool canGeneratePowerUp = true;
     public bool isPowerUpActive = false;
 
