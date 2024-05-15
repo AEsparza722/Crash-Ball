@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [SerializeField]public int lives;
     [SerializeField] GameObject barrier;
+    List<GameObject> grabbedBalls = new List<GameObject>();
 
 
     private void Awake()
@@ -30,10 +31,19 @@ public class PlayerController : MonoBehaviour
         Move();
         Sprint();
 
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetMouseButtonDown(0))
         {
             KickBall();
         }
+        if (Input.GetMouseButton(1))
+        {
+            GrabBall();
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            ReleaseBall();
+        }
+
 
     }
     void Move()
@@ -85,18 +95,39 @@ public class PlayerController : MonoBehaviour
 
     void GrabBall()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 1.3f);
 
         if (colliders.Length != 0)
         {
             foreach (Collider collider in colliders)
             {
-                if (collider.CompareTag("Ball"))
+                if (collider.CompareTag("Ball") && !grabbedBalls.Contains(collider.gameObject))
                 {
-                   FixedJoint ballJoint = collider.AddComponent<FixedJoint>(); //Vamos a usar joints para sostener las pelotas
+                    FixedJoint ballJoint = collider.AddComponent<FixedJoint>(); //Vamos a usar joints para sostener las pelotas
+                    ballJoint.connectedMassScale = 0;
+                    ballJoint.connectedBody = rb;
+                    ballJoint.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    grabbedBalls.Add(ballJoint.gameObject);
                 }
             }
+        }        
+    }
+
+    void ReleaseBall()
+    {
+        if (grabbedBalls.Count > 0)
+        {
+            foreach (GameObject ball in grabbedBalls)
+            {
+                Vector3 ballDir = (ball.transform.position - transform.position).normalized;
+                Rigidbody ballRB = ball.GetComponent<Rigidbody>();
+                Destroy(ball.GetComponent<FixedJoint>());
+                ballRB.velocity = Vector3.zero;
+                ballRB.AddForce(ballDir * 13f, ForceMode.Impulse);
+            }
+            grabbedBalls.Clear();
         }
+        
     }
 
 }

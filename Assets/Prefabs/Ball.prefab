@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4303072743219884831}
   - component: {fileID: 1421930025860411101}
   - component: {fileID: 8321249703344796342}
-  - component: {fileID: -1411339967929397020}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -180,18 +179,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!138 &-1411339967929397020
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8848150127058391078}
-  m_ConnectedBody: {fileID: 0}
-  m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
