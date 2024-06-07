@@ -7,9 +7,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Players player;
-    float moveX;
     [SerializeField] float playerSpeed;
-    public bool hasPowerUp; 
+    public bool hasPowerUp;
     Rigidbody rb;
     [SerializeField]public int lives;
     [SerializeField] GameObject barrier;
