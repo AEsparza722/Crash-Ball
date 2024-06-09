@@ -1235,6 +1235,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 2
       objectReference: {fileID: 0}
@@ -1242,6 +1252,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[2]'
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8492914580499540072, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -1873,6 +1908,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 2
       objectReference: {fileID: 0}
@@ -1880,6 +1920,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[2]'
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8492914580499540072, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -2652,6 +2717,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_InferenceDevice
       value: 2
       objectReference: {fileID: 0}
@@ -2659,6 +2729,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[2]'
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8492914580499540072, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -3458,6 +3553,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: 'm_BrainParameters.m_ActionSpec.BranchSizes.Array.data[2]'
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8492914580499540072, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
