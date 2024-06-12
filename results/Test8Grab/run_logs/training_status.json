@@ -1,0 +1,29 @@
+{
+    "CrashPinball": {
+        "checkpoints": [
+            {
+                "steps": 1792,
+                "file_path": "results\\Test8Grab\\CrashPinball\\CrashPinball-1792.onnx",
+                "reward": null,
+                "creation_time": 1718151615.452251,
+                "auxillary_file_paths": [
+                    "results\\Test8Grab\\CrashPinball\\CrashPinball-1792.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1792,
+            "file_path": "results\\Test8Grab\\CrashPinball.onnx",
+            "reward": null,
+            "creation_time": 1718151615.452251,
+            "auxillary_file_paths": [
+                "results\\Test8Grab\\CrashPinball\\CrashPinball-1792.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

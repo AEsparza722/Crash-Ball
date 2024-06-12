@@ -1,0 +1,38 @@
+{
+    "CrashPinball": {
+        "checkpoints": [
+            {
+                "steps": 499968,
+                "file_path": "results\\Test11Menos\\CrashPinball\\CrashPinball-499968.onnx",
+                "reward": null,
+                "creation_time": 1718153886.579579,
+                "auxillary_file_paths": [
+                    "results\\Test11Menos\\CrashPinball\\CrashPinball-499968.pt"
+                ]
+            },
+            {
+                "steps": 726912,
+                "file_path": "results\\Test11Menos\\CrashPinball\\CrashPinball-726912.onnx",
+                "reward": null,
+                "creation_time": 1718154212.4622223,
+                "auxillary_file_paths": [
+                    "results\\Test11Menos\\CrashPinball\\CrashPinball-726912.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 726912,
+            "file_path": "results\\Test11Menos\\CrashPinball.onnx",
+            "reward": null,
+            "creation_time": 1718154212.4622223,
+            "auxillary_file_paths": [
+                "results\\Test11Menos\\CrashPinball\\CrashPinball-726912.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

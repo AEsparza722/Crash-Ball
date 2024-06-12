@@ -20,6 +20,8 @@ public class Ball : MonoBehaviour
             currentMaxSpeed = rb.velocity.magnitude;            
         }
         rb.velocity = rb.velocity.normalized * currentMaxSpeed;
+
+        if(transform.position.y < -10f) Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
