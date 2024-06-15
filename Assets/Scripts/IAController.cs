@@ -117,13 +117,13 @@ public class IAController : Agent
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            this.AddReward(0.5f);
+            this.AddReward(0.65f);
         }
     }
 
     void KickBall()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 2.5f);
+        Collider[] colliders = Physics.OverlapSphere(transform.position + new Vector3(0,-0.5f,0), 2f);
 
         if (colliders.Length != 0)
         {
@@ -132,8 +132,8 @@ public class IAController : Agent
                 if (collider.CompareTag("Ball"))
                 {
                     Vector3 forceDir = collider.transform.position - transform.position;
-                    collider.GetComponent<Rigidbody>().AddForce(forceDir.normalized * 15f, ForceMode.Impulse);
-                    this.AddReward(0.25f);
+                    collider.GetComponent<Rigidbody>().AddForce(forceDir.normalized * 9f, ForceMode.Impulse);
+                    this.AddReward(0.10f);
                 }
             }
         }
@@ -160,6 +160,11 @@ public class IAController : Agent
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position + new Vector3(0, -0.5f, 0), 2f);
+    }
+
     void ReleaseBall()
     {
         if (grabbedBalls.Count > 0)
@@ -170,7 +175,7 @@ public class IAController : Agent
                 Rigidbody ballRB = ball.GetComponent<Rigidbody>();
                 Destroy(ball.GetComponent<FixedJoint>());
                 ballRB.velocity = Vector3.zero;
-                ballRB.AddForce(ballDir * 13f, ForceMode.Impulse);
+                ballRB.AddForce(ballDir * 11f, ForceMode.Impulse);
             }
             grabbedBalls.Clear();
             Debug.Log("Released ball " + name);

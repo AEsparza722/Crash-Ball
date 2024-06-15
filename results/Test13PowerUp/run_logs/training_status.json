@@ -1,0 +1,65 @@
+{
+    "CrashPinball": {
+        "checkpoints": [
+            {
+                "steps": 2499968,
+                "file_path": "results\\Test13PowerUp\\CrashPinball\\CrashPinball-2499968.onnx",
+                "reward": null,
+                "creation_time": 1718479536.0450692,
+                "auxillary_file_paths": [
+                    "results\\Test13PowerUp\\CrashPinball\\CrashPinball-2499968.pt"
+                ]
+            },
+            {
+                "steps": 2999936,
+                "file_path": "results\\Test13PowerUp\\CrashPinball\\CrashPinball-2999936.onnx",
+                "reward": null,
+                "creation_time": 1718479992.1182702,
+                "auxillary_file_paths": [
+                    "results\\Test13PowerUp\\CrashPinball\\CrashPinball-2999936.pt"
+                ]
+            },
+            {
+                "steps": 3499968,
+                "file_path": "results\\Test13PowerUp\\CrashPinball\\CrashPinball-3499968.onnx",
+                "reward": null,
+                "creation_time": 1718480428.665064,
+                "auxillary_file_paths": [
+                    "results\\Test13PowerUp\\CrashPinball\\CrashPinball-3499968.pt"
+                ]
+            },
+            {
+                "steps": 3999936,
+                "file_path": "results\\Test13PowerUp\\CrashPinball\\CrashPinball-3999936.onnx",
+                "reward": null,
+                "creation_time": 1718480870.4459457,
+                "auxillary_file_paths": [
+                    "results\\Test13PowerUp\\CrashPinball\\CrashPinball-3999936.pt"
+                ]
+            },
+            {
+                "steps": 4000128,
+                "file_path": "results\\Test13PowerUp\\CrashPinball\\CrashPinball-4000128.onnx",
+                "reward": null,
+                "creation_time": 1718480870.5503566,
+                "auxillary_file_paths": [
+                    "results\\Test13PowerUp\\CrashPinball\\CrashPinball-4000128.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4000128,
+            "file_path": "results\\Test13PowerUp\\CrashPinball.onnx",
+            "reward": null,
+            "creation_time": 1718480870.5503566,
+            "auxillary_file_paths": [
+                "results\\Test13PowerUp\\CrashPinball\\CrashPinball-4000128.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}
