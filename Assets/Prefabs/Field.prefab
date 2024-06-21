@@ -1434,8 +1434,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: TeamId
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_Model
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -1713,8 +1723,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: TeamId
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_Model
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -1893,6 +1913,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player2AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: TeamId
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
@@ -2448,8 +2473,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
+      propertyPath: TeamId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
       propertyPath: m_Model
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
+        type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7356470869065305846, guid: 53cd9f75b2452424c94d808a5b4f47cc,
         type: 3}
