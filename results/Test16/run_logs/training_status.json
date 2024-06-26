@@ -3,24 +3,6 @@
         "elo": 1200.0,
         "checkpoints": [
             {
-                "steps": 133344,
-                "file_path": "results\\Test16\\CrashPinball\\CrashPinball-133344.onnx",
-                "reward": null,
-                "creation_time": 1718926980.0815706,
-                "auxillary_file_paths": [
-                    "results\\Test16\\CrashPinball\\CrashPinball-133344.pt"
-                ]
-            },
-            {
-                "steps": 197184,
-                "file_path": "results\\Test16\\CrashPinball\\CrashPinball-197184.onnx",
-                "reward": -8.400000095367432,
-                "creation_time": 1718930002.4684565,
-                "auxillary_file_paths": [
-                    "results\\Test16\\CrashPinball\\CrashPinball-197184.pt"
-                ]
-            },
-            {
                 "steps": 499968,
                 "file_path": "results\\Test16\\CrashPinball\\CrashPinball-499968.onnx",
                 "reward": null,
@@ -37,15 +19,42 @@
                 "auxillary_file_paths": [
                     "results\\Test16\\CrashPinball\\CrashPinball-522048.pt"
                 ]
+            },
+            {
+                "steps": 999968,
+                "file_path": "results\\Test16\\CrashPinball\\CrashPinball-999968.onnx",
+                "reward": 56.61249789595604,
+                "creation_time": 1718940838.176288,
+                "auxillary_file_paths": [
+                    "results\\Test16\\CrashPinball\\CrashPinball-999968.pt"
+                ]
+            },
+            {
+                "steps": 1499936,
+                "file_path": "results\\Test16\\CrashPinball\\CrashPinball-1499936.onnx",
+                "reward": null,
+                "creation_time": 1718942787.306709,
+                "auxillary_file_paths": [
+                    "results\\Test16\\CrashPinball\\CrashPinball-1499936.pt"
+                ]
+            },
+            {
+                "steps": 1811712,
+                "file_path": "results\\Test16\\CrashPinball\\CrashPinball-1811712.onnx",
+                "reward": null,
+                "creation_time": 1718944130.206763,
+                "auxillary_file_paths": [
+                    "results\\Test16\\CrashPinball\\CrashPinball-1811712.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 522048,
+            "steps": 1811712,
             "file_path": "results\\Test16\\CrashPinball.onnx",
             "reward": null,
-            "creation_time": 1718931754.9873629,
+            "creation_time": 1718944130.206763,
             "auxillary_file_paths": [
-                "results\\Test16\\CrashPinball\\CrashPinball-522048.pt"
+                "results\\Test16\\CrashPinball\\CrashPinball-1811712.pt"
             ]
         }
     },

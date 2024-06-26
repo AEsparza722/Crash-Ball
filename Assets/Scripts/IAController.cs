@@ -117,7 +117,7 @@ public class IAController : Agent
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            this.AddReward(0.65f);
+            this.AddReward(0.5f);
         }
     }
 
