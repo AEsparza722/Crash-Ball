@@ -26,6 +26,10 @@ public class Ball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        rb.velocity = new Vector3(rb.velocity.x * speedIncrease, 0, rb.velocity.z * speedIncrease);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            rb.velocity = new Vector3(rb.velocity.x * speedIncrease, 0, rb.velocity.z * speedIncrease);
+        }
+        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
     }
 }

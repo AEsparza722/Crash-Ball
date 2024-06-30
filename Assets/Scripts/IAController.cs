@@ -132,7 +132,8 @@ public class IAController : Agent
                 if (collider.CompareTag("Ball"))
                 {
                     Vector3 forceDir = collider.transform.position - transform.position;
-                    collider.GetComponent<Rigidbody>().AddForce(forceDir.normalized * 9f, ForceMode.Impulse);
+                    forceDir = new Vector3 (forceDir.x, 0, forceDir.z); 
+                    collider.GetComponent<Rigidbody>().AddForce(forceDir.normalized * 6f, ForceMode.Impulse);
                     this.AddReward(0.10f);
                 }
             }

@@ -27,7 +27,7 @@ public class Cannon : MonoBehaviour
     public void ShootBall()
     {
         Quaternion initialRotation = shootingDirection.rotation;
-        shootingDirection.Rotate(0, UnityEngine.Random.Range(-35f, 35f), 0); //= Quaternion.Euler(0, UnityEngine.Random.Range(-30f,30f), 0);
+        shootingDirection.Rotate(0, UnityEngine.Random.Range(-25f, 25f), 0); //= Quaternion.Euler(0, UnityEngine.Random.Range(-30f,30f), 0);
         Vector3 shootDirForce = shootingDirection.forward * 3f;
         GameObject tempBall = Instantiate(ball, shootingDirection.position, Quaternion.identity);
         tempBall.GetComponent<Rigidbody>().AddForce(shootDirForce, ForceMode.Impulse);
