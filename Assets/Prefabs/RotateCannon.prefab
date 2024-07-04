@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1357931754d4ba24fb16664bc5c86b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 8848150127058391078, guid: 979fb13cac00351469e40a72c161c1b0, type: 3}
+  ball: {fileID: 8848150127058391078, guid: 9dd28d7d9e9aaf74d83059e40a6ff729, type: 3}
+  canShot: 1
 --- !u!136 &775737762603938163
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +130,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -212,6 +215,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
