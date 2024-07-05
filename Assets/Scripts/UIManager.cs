@@ -9,10 +9,10 @@ public class UIManager : MonoBehaviour
     public TMP_Text Player2Text;
     public TMP_Text Player3Text;
     public TMP_Text Player4Text;
-    [SerializeField] PlayerController player1;
-    [SerializeField] PlayerController player2;
-    [SerializeField] PlayerController player3;
-    [SerializeField] PlayerController player4;
+    [SerializeField] IAController player1;
+    [SerializeField] IAController player2;
+    [SerializeField] IAController player3;
+    [SerializeField] IAController player4;
     public static UIManager instance;
 
     private void Awake()

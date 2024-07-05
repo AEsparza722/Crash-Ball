@@ -11,11 +11,16 @@ using Unity.VisualScripting;
 
 public class IAController : Agent
 {
-    float IASpeed = 15f;
+    float IASpeed = 12f; //15
     Rigidbody rb;
     public bool isTraining = false;
+    bool canSprint = true;
+    bool isSprint = false;
+    float cooldownSprint = 5f;
     float moveX;
     float currentSpeed;
+    [SerializeField] public int lives;
+    [SerializeField] GameObject barrier;
 
     List<GameObject> grabbedBalls = new List<GameObject>();
 
@@ -58,7 +63,7 @@ public class IAController : Agent
         {
             moveX = continuousActions[0];
             float sprintAction = continuousActions[1];
-            currentSpeed = sprintAction > 0.5f ? IASpeed * 2f : IASpeed;
+            currentSpeed = sprintAction > 0.5f ? IASpeed * 2f : IASpeed; //*2
             float KickAction = continuousActions[2];
             float grabBallAction = continuousActions[3];
            
@@ -84,8 +89,20 @@ public class IAController : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        float MoveX = 0;
+        float MoveX = Input.GetAxis("Horizontal");
         float sprintAction = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
+        if (sprintAction == 1)
+        {
+            if(isSprint == false)
+            {
+                StartCoroutine(BlockSprint());
+            }
+            isSprint = true;
+        }
+        if (!canSprint)
+        {
+            sprintAction = 0f;
+        }
         float kickAction = Input.GetMouseButtonDown(0) ? 1f : 0f;
         float grabBallAction = Input.GetMouseButton(1) ? 1f : 0f;
 
@@ -111,6 +128,13 @@ public class IAController : Agent
     public void TakeGoal()
     {
         this.AddReward(-0.5f);
+        
+        lives--;
+        if (lives == 0)
+        {
+            barrier.SetActive(true);
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -183,6 +207,20 @@ public class IAController : Agent
             StopAllCoroutines();
         }
 
+    }
+
+    IEnumerator BlockSprint()
+    {
+        yield return new WaitForSeconds(2);
+        canSprint = false;
+        isSprint = false;
+        StartCoroutine(CooldownSprint());
+    }
+
+    IEnumerator CooldownSprint()
+    {        
+        yield return new WaitForSeconds(cooldownSprint);
+        canSprint = true;
     }
 
     IEnumerator RewardOnGrabbedBall()

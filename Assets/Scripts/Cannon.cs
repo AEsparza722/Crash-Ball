@@ -9,6 +9,7 @@ public class Cannon : MonoBehaviour
     Transform shootingDirection;
     [SerializeField] GameObject ball;
     public PowerUp powerUp;
+    Animator anim;
     
     
     public event EventHandler OnPowerUpPick;
@@ -16,15 +17,16 @@ public class Cannon : MonoBehaviour
     
     private void Awake()
     {
+        anim = GetComponentInChildren<Animator>();
        shootingDirection = transform.Find("Barrel");
     }
 
-    private void Update()
+    public void ShootBall()
     {
-
+        anim.SetTrigger("LaunchBall");        
     }
 
-    public void ShootBall()
+    public void LaunchBall()
     {
         Quaternion initialRotation = shootingDirection.rotation;
         shootingDirection.Rotate(0, UnityEngine.Random.Range(-25f, 25f), 0); //= Quaternion.Euler(0, UnityEngine.Random.Range(-30f,30f), 0);
