@@ -14,7 +14,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _ADVANCED_SHADING
-  - _DISTANCE_NORMALS
   - _FOAM
   - _NORMALMAP
   - _REFRACTION
@@ -69,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTex:
-        m_Texture: {fileID: 2800000, guid: 6a4aa5aa1ed7b9e4e9204a95f56f4d29, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2e10c404ec8e1ff41bff06b82e5569df, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamTexDynamic:
@@ -155,12 +154,12 @@ Material:
     - _Cutoff: 0.5
     - _Depth: 0.94
     - _DepthExp: 1
-    - _DepthHorizontal: 1
+    - _DepthHorizontal: 0.01
     - _DepthMode: 0
     - _DepthTexture: 1
-    - _DepthVertical: 8
+    - _DepthVertical: 6.44
     - _DisableDepthTexture: 0
-    - _DistanceNormalsOn: 1
+    - _DistanceNormalsOn: 0
     - _DistanceNormalsTiling: 0.25000003
     - _DstBlend: 0
     - _EdgeFade: 18.7
@@ -168,9 +167,9 @@ Material:
     - _EnvironmentReflectionsOn: 1
     - _FlatShadingOn: 0
     - _FlowSpeed: 1
-    - _FoamBaseAmount: 0.297
-    - _FoamClipping: 0
-    - _FoamDistortion: 1.37
+    - _FoamBaseAmount: 0.298
+    - _FoamClipping: 0.999
+    - _FoamDistortion: 0.59
     - _FoamOn: 1
     - _FoamOpacity: 0
     - _FoamSize: 0.606
@@ -182,7 +181,7 @@ Material:
     - _FoamSubTilingDynamic: 2
     - _FoamTiling: 0.09999993
     - _FoamTilingDynamic: 0.1
-    - _FoamWaveAmount: 0
+    - _FoamWaveAmount: 2
     - _FoamWaveMask: 0
     - _FoamWaveMaskExp: 1
     - _GlossMapScale: 0
@@ -190,9 +189,9 @@ Material:
     - _GlossyReflections: 0
     - _HorizonDistance: 8
     - _IntersectionClipping: 0.395
-    - _IntersectionDistortion: 0.2
-    - _IntersectionFalloff: 1
-    - _IntersectionLength: 2.27
+    - _IntersectionDistortion: 1
+    - _IntersectionFalloff: 0.711
+    - _IntersectionLength: 2.14
     - _IntersectionRippleDist: 16
     - _IntersectionRippleStrength: 0.125
     - _IntersectionSize: 0.944
@@ -279,7 +278,7 @@ Material:
     - _VertexColorWaveFlattening: 1
     - _WaveCount: 2
     - _WaveDistance: 0.775
-    - _WaveHeight: 0.1
+    - _WaveHeight: 0.45
     - _WaveNormalStr: 0.1
     - _WaveSpeed: 2.3999996
     - _WaveSteepness: 0
@@ -290,19 +289,19 @@ Material:
     - _ZClip: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.16451614, b: 0.34, a: 0.9647059}
+    - _BaseColor: {r: 0, g: 0.21447277, b: 1, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _DepthMapBounds: {r: -402.3, g: -459.43, b: 0.0012693577, a: 0}
     - _Direction: {r: 1, g: 1, b: 0, a: 0}
     - _DistanceNormalsFadeDist: {r: 0, g: 80, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.92941177}
+    - _FoamColor: {r: 0.66352195, g: 1, b: 0.86861277, a: 0.10980392}
     - _FoamTiling: {r: 0.1, g: 0.1, b: 0, a: 0}
     - _HorizonColor: {r: 0.68, g: 1, b: 0.99, a: 0.15}
     - _IntersectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _NormalTiling: {r: 0.6, g: 0.6, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShallowColor: {r: 0, g: 1, b: 0.9803922, a: 0.6666667}
+    - _ShallowColor: {r: 0, g: 1, b: 0.68363714, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _WaterColor: {r: 0.21176466, g: 0.6745098, b: 1, a: 1}
     - _WaterShallowColor: {r: 0, g: 0.9394503, b: 1, a: 1}
