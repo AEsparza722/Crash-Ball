@@ -187,7 +187,7 @@ public class IAController : Agent
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(transform.position + new Vector3(0, -0.5f, 0), 2f);
+
     }
 
     void ReleaseBall()
