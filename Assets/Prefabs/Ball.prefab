@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncrease: 1.05
-  dustParticle: {fileID: 3557471197077631225}
+  dustParticle: {fileID: 2303106412509595690, guid: 4c70b8da759b1d842becf7c82819dc59,
+    type: 3}
   waterParticle: {fileID: 1103207506604253010}
 --- !u!135 &1421930025860411101
 SphereCollider:
@@ -113,6 +114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dust
       objectReference: {fileID: 0}
+    - target: {fileID: 2379430640071408687, guid: 4c70b8da759b1d842becf7c82819dc59,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8453856195134974991, guid: 4c70b8da759b1d842becf7c82819dc59,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -168,12 +174,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c70b8da759b1d842becf7c82819dc59, type: 3}
---- !u!198 &3557471197077631225 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4550676790330289778, guid: 4c70b8da759b1d842becf7c82819dc59,
-    type: 3}
-  m_PrefabInstance: {fileID: 1043125762724372107}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8875412005691847300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8453856195134974991, guid: 4c70b8da759b1d842becf7c82819dc59,

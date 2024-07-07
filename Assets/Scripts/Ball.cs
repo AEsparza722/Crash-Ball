@@ -34,13 +34,13 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            dustParticle.Play();
-        }
-    }
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Floor"))
+    //    {
+    //        dustParticle.Play();
+    //    }
+    //}
 
     private void OnCollisionExit(Collision collision)
     {
@@ -55,6 +55,8 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Water"))            
         {
             waterParticle.Play();
+            dustParticle.Stop();
+            dustParticle.Clear();
         }
     }
 }

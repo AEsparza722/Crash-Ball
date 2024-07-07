@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedIncrease: 1.05
-  dustParticle: {fileID: 9052892916510649381}
+  dustParticle: {fileID: 2303106412509595690, guid: 4c70b8da759b1d842becf7c82819dc59,
+    type: 3}
   waterParticle: {fileID: 697101137974386436}
 --- !u!135 &1421930025860411101
 SphereCollider:
@@ -251,12 +252,6 @@ PrefabInstance:
 --- !u!4 &4023745410379378264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8453856195134974991, guid: 4c70b8da759b1d842becf7c82819dc59,
-    type: 3}
-  m_PrefabInstance: {fileID: 4793261887787893335}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &9052892916510649381 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4550676790330289778, guid: 4c70b8da759b1d842becf7c82819dc59,
     type: 3}
   m_PrefabInstance: {fileID: 4793261887787893335}
   m_PrefabAsset: {fileID: 0}
