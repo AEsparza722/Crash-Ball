@@ -24,6 +24,8 @@ public class IAController : Agent
 
     List<GameObject> grabbedBalls = new List<GameObject>();
 
+    [SerializeField] Animator animator;
+
     public RayPerceptionSensorComponent3D rayPerceptionSensor; // Referencia al componente del sensor
 
 
@@ -89,8 +91,10 @@ public class IAController : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
-        float MoveX = Input.GetAxis("Horizontal");
+        float MoveX = Input.GetAxisRaw("Horizontal");
         float sprintAction = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
+       
+
         if (sprintAction == 1)
         {
             if(isSprint == false)
@@ -117,6 +121,23 @@ public class IAController : Agent
         else
         {
             Debug.LogWarning("El array de acciones continuas es demasiado pequeño.");
+        }
+
+        if (MoveX > 0f)
+        {
+            animator.SetBool("isRight", true); //Move right
+            animator.SetBool("isLeft", false);
+        }
+        else if (moveX < 0f)
+        {
+            animator.SetBool("isLeft", true);//Move left
+            animator.SetBool("isRight", false);
+        }
+        else
+        {
+            //Idle
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
         }
     }
     private void Update()

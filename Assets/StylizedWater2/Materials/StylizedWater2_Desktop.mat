@@ -17,6 +17,7 @@ Material:
   - _FOAM
   - _NORMALMAP
   - _REFRACTION
+  - _RIVER
   - _SHARP_INERSECTION
   - _TRANSLUCENCY
   - _WAVES
@@ -35,7 +36,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _WaveFadeDistance
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -234,7 +235,7 @@ Material:
     - _RefractionStrength: 0.105
     - _RimRize: 1
     - _RimTiling: 0.025
-    - _RiverModeOn: 0
+    - _RiverModeOn: 1
     - _SHARP_INERSECTIONOn: 1
     - _ShadingMode: 1
     - _ShadowStrength: 1

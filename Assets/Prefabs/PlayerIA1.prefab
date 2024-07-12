@@ -229,6 +229,7 @@ MonoBehaviour:
   isTraining: 1
   lives: 10
   barrier: {fileID: 0}
+  animator: {fileID: 0}
   rayPerceptionSensor: {fileID: 0}
 --- !u!114 &7876866991952834985
 MonoBehaviour:
@@ -492,7 +493,7 @@ Animator:
   m_GameObject: {fileID: 6763429954538240728}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f97a251d62168d14b8a553d361c7f857, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

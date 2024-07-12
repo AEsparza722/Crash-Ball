@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         }
         rb.velocity = rb.velocity.normalized * currentMaxSpeed;
 
-        if(transform.position.y < -10f) Destroy(gameObject);
+        if(transform.position.y < -5f) Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -34,19 +34,19 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
     }
 
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Floor"))
-    //    {
-    //        dustParticle.Play();
-    //    }
-    //}
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            dustParticle.Play();
+        }
+    }
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            dustParticle.Stop();
+            //dustParticle.Stop();
         }
     }
 
@@ -55,8 +55,8 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("Water"))            
         {
             waterParticle.Play();
-            dustParticle.Stop();
-            dustParticle.Clear();
+            //dustParticle.Stop();
+            //dustParticle.Clear();
         }
     }
 }
