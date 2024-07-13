@@ -7,7 +7,8 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     [SerializeField] float speedIncrease;
     float currentMaxSpeed = 0;
-    [SerializeField] ParticleSystem dustParticle, waterParticle;
+    [SerializeField] ParticleSystem dustParticle;
+    [SerializeField] float splashHeight;
 
     private void Awake()
     {
@@ -22,7 +23,8 @@ public class Ball : MonoBehaviour
         }
         rb.velocity = rb.velocity.normalized * currentMaxSpeed;
 
-        if(transform.position.y < -5f) Destroy(gameObject);
+        if(transform.position.y < -50f) Destroy(gameObject);
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -54,9 +56,21 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Water"))            
         {
-            waterParticle.Play();
+            GameObject tempSplash = SplashPool.instance.GetPooledSplash();
+            tempSplash.transform.position = new Vector3(transform.position.x, splashHeight, transform.position.z);
+            tempSplash.SetActive(true);
+            StartCoroutine(DeactivateSplash(tempSplash, 1.5f));
+
+            ParticleSystem.MainModule main = dustParticle.main;
+            main.startColor = Color.white;
             //dustParticle.Stop();
             //dustParticle.Clear();
         }
+    }
+
+    IEnumerator DeactivateSplash(GameObject splash, float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        splash.SetActive(false);
     }
 }

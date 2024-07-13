@@ -87,6 +87,24 @@ public class IAController : Agent
         {
             Debug.LogWarning("Se esperaban al menos 2 acciones continuas.");
         }
+
+        if (moveX > 0f)
+        {
+            animator.SetBool("isRight", true); //Move right
+            animator.SetBool("isLeft", false);
+        }
+        else if (moveX < 0f)
+        {
+            animator.SetBool("isLeft", true);//Move left
+            animator.SetBool("isRight", false);
+        }
+        else
+        {
+            //Idle
+            animator.SetBool("isRight", false);
+            animator.SetBool("isLeft", false);
+        }
+
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -123,22 +141,7 @@ public class IAController : Agent
             Debug.LogWarning("El array de acciones continuas es demasiado pequeño.");
         }
 
-        if (MoveX > 0f)
-        {
-            animator.SetBool("isRight", true); //Move right
-            animator.SetBool("isLeft", false);
-        }
-        else if (moveX < 0f)
-        {
-            animator.SetBool("isLeft", true);//Move left
-            animator.SetBool("isRight", false);
-        }
-        else
-        {
-            //Idle
-            animator.SetBool("isRight", false);
-            animator.SetBool("isLeft", false);
-        }
+       
     }
     private void Update()
     {
