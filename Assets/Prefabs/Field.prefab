@@ -458,6 +458,8 @@ MonoBehaviour:
   minCooldown: 1
   maxCooldown: 4
   rotateCannon: {fileID: 7501652894032020832}
+  rotatingCannonExplosion: {fileID: 0}
+  explosionMaterial: {fileID: 0}
 --- !u!114 &4205218678728621767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,11 +770,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RotateCannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 435058474283578919, guid: ae6a8358a692e9a418a619e0c915362a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6458206979586435463, guid: ae6a8358a692e9a418a619e0c915362a,
         type: 3}

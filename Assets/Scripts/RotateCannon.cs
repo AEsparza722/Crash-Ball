@@ -8,7 +8,7 @@ public class RotateCannon : MonoBehaviour
     Transform shootingDirection;
     [SerializeField] GameObject ball;
     float rotationSpeed;
-    public bool canShot = true;
+    public bool canShot = false;
 
     private void Awake()
     {

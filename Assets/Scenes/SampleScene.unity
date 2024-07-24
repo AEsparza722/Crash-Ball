@@ -426,8 +426,9 @@ GameObject:
   - component: {fileID: 330192843}
   - component: {fileID: 330192842}
   - component: {fileID: 330192841}
+  - component: {fileID: 330192844}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: RotatingCannonExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,8 +497,8 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 1
-  m_VertexStreams: 000103040522
+  m_UseCustomVertexStreams: 0
+  m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
@@ -524,9 +525,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4721,7 +4722,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
   CustomDataModule:
-    enabled: 1
+    enabled: 0
     mode0: 1
     vectorComponentCount0: 4
     color0:
@@ -5316,14 +5317,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330192840}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.00020658449, y: 2.5498226, z: 0.0005817291}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.3008919, y: -0.14, z: 2.9073024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 762857374}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5989211099098501138}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &330192844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330192840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ef82d9c89b1ac4d89b05fe32241e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,9 +6005,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -12640,11 +12653,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1469631522072075068, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155084046914706887, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170916341473077386, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: explosionMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 24190f8cbb4885f429626aa00ac8c7d6, type: 2}
+    - target: {fileID: 3170916341473077386, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: rotatingCannonExplosion
+      value: 
+      objectReference: {fileID: 330192842}
+    - target: {fileID: 3668126460305476763, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: lives
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461921258831742108, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769516041595871102, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: lives
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5914783047053864634, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: lives
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337691406069383142, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: lives
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7501652894032020832, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: canShot
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6684735981909215271, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 330192843}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9fbccc6d8472834498ca582c6d57603, type: 3}
+--- !u!4 &5989211099098501138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6684735981909215271, guid: f9fbccc6d8472834498ca582c6d57603,
+    type: 3}
+  m_PrefabInstance: {fileID: 5989211099098501137}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7647342181849751680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12725,4 +12798,3 @@ SceneRoots:
   - {fileID: 1004098549}
   - {fileID: 256586986}
   - {fileID: 739479392}
-  - {fileID: 330192843}
