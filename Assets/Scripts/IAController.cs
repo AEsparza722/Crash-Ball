@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using Google.Protobuf.Collections;
 using System.Threading;
 using Unity.VisualScripting;
+using System;
 
 public class IAController : Agent
 {
@@ -19,7 +20,7 @@ public class IAController : Agent
     float cooldownSprint = 5f;
     float moveX;
     float currentSpeed;
-    [SerializeField] public int lives;
+    [HideInInspector] public int currentLives;
     [SerializeField] GameObject barrier;
 
     List<GameObject> grabbedBalls = new List<GameObject>();
@@ -37,18 +38,25 @@ public class IAController : Agent
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentLives = GameManager.instance.playerLives;
+        GameManager.OnRestartGame += RestartPlayer;
     }
 
+    void RestartPlayer(object sender, EventArgs e)
+    {
+        currentLives = GameManager.instance.playerLives;
+        rb.velocity = Vector3.zero; // Reinicia la velocidad del rigidbody
+        moveX = 0f; // Reinicia el movimiento
+        currentSpeed = IASpeed; // Reinicia la velocidad
+    }
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.position);
         sensor.AddObservation(rb.velocity);
-
     }
-
 
     public override void OnEpisodeBegin()
     {
@@ -153,8 +161,8 @@ public class IAController : Agent
     {
         this.AddReward(-0.5f);
         
-        lives--;
-        if (lives == 0)
+        currentLives--;
+        if (currentLives == 0)
         {
             barrier.SetActive(true);
             Destroy(gameObject);
