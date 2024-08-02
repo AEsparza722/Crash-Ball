@@ -10,8 +10,9 @@ public class Cannon : MonoBehaviour
     [SerializeField] GameObject ball;
     public PowerUp powerUp;
     Animator anim;
-    
-    
+    GameObject ballContainer;
+
+
     public event EventHandler OnPowerUpPick;
 
     
@@ -19,6 +20,7 @@ public class Cannon : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
        shootingDirection = transform.Find("Barrel");
+        ballContainer = GameObject.FindGameObjectWithTag("BallContainer");
     }
 
     public void ShootBall()
@@ -31,7 +33,7 @@ public class Cannon : MonoBehaviour
         Quaternion initialRotation = shootingDirection.rotation;
         shootingDirection.Rotate(0, UnityEngine.Random.Range(-25f, 25f), 0); //= Quaternion.Euler(0, UnityEngine.Random.Range(-30f,30f), 0);
         Vector3 shootDirForce = shootingDirection.forward * 3f;
-        GameObject tempBall = Instantiate(ball, shootingDirection.position, Quaternion.identity);
+        GameObject tempBall = Instantiate(ball, shootingDirection.position, Quaternion.identity, ballContainer.transform);
         tempBall.GetComponent<Rigidbody>().AddForce(shootDirForce, ForceMode.Impulse);
         shootingDirection.rotation = initialRotation;
     }

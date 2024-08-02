@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6458206979586435463
 Transform:
   m_ObjectHideFlags: 0
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 8848150127058391078, guid: 9dd28d7d9e9aaf74d83059e40a6ff729, type: 3}
   canShot: 1
+  ballContainer: {fileID: 0}
 --- !u!136 &775737762603938163
 CapsuleCollider:
   m_ObjectHideFlags: 0

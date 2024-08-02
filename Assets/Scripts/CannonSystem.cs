@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class CannonSystem : MonoBehaviour
     [SerializeField] RotateCannon rotateCannon;
     bool canShoot = true;
     bool canSpawnRotateCannon = true;
+    bool isWinGame = false;
     [SerializeField] ParticleSystem rotatingCannonExplosion;
 
     [SerializeField] Material explosionMaterial;
@@ -21,8 +23,14 @@ public class CannonSystem : MonoBehaviour
     float currentValueExplosionDark;
     float currentValueExplosionClear;
 
+    private void Awake()
+    {
+        GameManager.OnWinGame += StopAll;
+    }
+
     private void Update()
     {
+        if (isWinGame) return;
         if (canShoot)
         {
             StartCoroutine(launchBall());
@@ -38,9 +46,9 @@ public class CannonSystem : MonoBehaviour
         maxCooldown -= 0.1f;
         maxCooldown = Mathf.Clamp(maxCooldown, minCooldown, maxCooldown);
         canShoot = false;
-        Cannon currentCannon = cannons[Random.Range(0, cannons.Count)];
+        Cannon currentCannon = cannons[UnityEngine.Random.Range(0, cannons.Count)];
         currentCannon.ShootBall();
-        yield return new WaitForSeconds(Random.Range(minCooldown, maxCooldown));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(minCooldown, maxCooldown));
         canShoot=true;
     }
 
@@ -49,7 +57,7 @@ public class CannonSystem : MonoBehaviour
         canSpawnRotateCannon = false;
 
         
-        yield return new WaitForSeconds(Random.Range(25f, 40f));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(25f, 40f));
 
         rotateCannon.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
@@ -103,5 +111,11 @@ public class CannonSystem : MonoBehaviour
             yield return null;
         }
         currentValueExplosionDark = endValueExplosion;
+    }
+
+    void StopAll(object sender, EventArgs e)
+    {
+        StopAllCoroutines();
+        rotateCannon.gameObject.SetActive(false);
     }
 }

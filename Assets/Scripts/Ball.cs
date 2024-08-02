@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -44,14 +45,6 @@ public class Ball : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            //dustParticle.Stop();
-        }
-    }
-
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Water"))            
@@ -63,8 +56,6 @@ public class Ball : MonoBehaviour
 
             ParticleSystem.MainModule main = dustParticle.main;
             main.startColor = Color.white;
-            //dustParticle.Stop();
-            //dustParticle.Clear();
         }
     }
 
@@ -73,4 +64,5 @@ public class Ball : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         splash.SetActive(false);
     }
+
 }

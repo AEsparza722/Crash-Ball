@@ -17,6 +17,7 @@ public class IAController : Agent
     public bool isTraining = false;
     bool canSprint = true;
     bool isSprint = false;
+    public bool isWin = false;
     float cooldownSprint = 5f;
     float moveX;
     float currentSpeed;
@@ -38,11 +39,16 @@ public class IAController : Agent
         }
     }
 
+    private void Awake()
+    {
+        GameManager.OnRestartGame += RestartPlayer;
+        GameManager.OnWinGame += PlayerWin;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentLives = GameManager.instance.playerLives;
-        GameManager.OnRestartGame += RestartPlayer;
     }
 
     void RestartPlayer(object sender, EventArgs e)
@@ -153,8 +159,11 @@ public class IAController : Agent
     }
     private void Update()
     {
-        Vector3 movement = transform.right * moveX * currentSpeed;
-        rb.velocity = movement;
+        if (!isWin)
+        {
+            Vector3 movement = transform.right * moveX * currentSpeed;
+            rb.velocity = movement;
+        }
     }
 
     public void TakeGoal()
@@ -165,6 +174,7 @@ public class IAController : Agent
         if (currentLives == 0)
         {
             barrier.SetActive(true);
+            GameManager.instance.DecrementAlivePlayers();
             Destroy(gameObject);
         }
     }
@@ -291,5 +301,21 @@ public class IAController : Agent
         this.AddReward(-0.4f);
         yield return new WaitForSeconds(0.5f);
         this.AddReward(-0.6f);
+    }
+
+    void PlayerWin(object sender, EventArgs e)
+    {
+        isWin = true;
+        animator.SetBool("isRight", false);
+        animator.SetBool("isLeft", false);
+        Debug.Log(isWin);
+        StartCoroutine(MoveToCenter());
+    }
+
+    IEnumerator MoveToCenter()
+    {
+        GameObject centerObj = GameObject.FindGameObjectWithTag("BallContainer");
+        yield return new WaitForSeconds(1);
+        rb.velocity = (transform.position - centerObj.transform.position).normalized * 1f;
     }
 }

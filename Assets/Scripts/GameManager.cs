@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] public int playerLives;
     public static event EventHandler OnRestartGame;
+    public static event EventHandler OnWinGame;
     [SerializeField] public GameObject pauseMenu;
+    int alivePlayers = 4;
     
 
     private void Awake()
@@ -37,6 +39,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             PauseGame();
+        }
+
+        if (alivePlayers == 1)
+        {
+            WinGame();
+            alivePlayers = 0;
         }
     }
     public void RestartGame()
@@ -66,5 +74,15 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
         }
         
+    }
+
+    public void WinGame()
+    {
+        OnWinGame?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void DecrementAlivePlayers()
+    {
+        alivePlayers--;
     }
 }
