@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f0cb00ac007cfbd49918eb2763f3cb0d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 233083
+  packageName: Stylized Splashes VFX pack
+  packageVersion: 1.0
+  assetPath: Assets/Stylized_Splashes_VFX_Pack/Animation/Wave.controller
+  uploadId: 529999

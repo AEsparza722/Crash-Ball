@@ -9,10 +9,11 @@ public class UIManager : MonoBehaviour
     public TMP_Text Player2Text;
     public TMP_Text Player3Text;
     public TMP_Text Player4Text;
-    [SerializeField] PlayerController player1;
-    [SerializeField] PlayerController player2;
-    [SerializeField] PlayerController player3;
-    [SerializeField] PlayerController player4;
+    public TMP_Text winnerText;
+    [SerializeField] IAController player1;
+    [SerializeField] IAController player2;
+    [SerializeField] IAController player3;
+    [SerializeField] IAController player4;
     public static UIManager instance;
 
     private void Awake()
@@ -29,9 +30,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        Player1Text.text = "Player 1: " + player1.lives.ToString();
-        Player2Text.text = "Player 2: " + player2.lives.ToString();
-        Player3Text.text = "Player 3: " + player3.lives.ToString();
-        Player4Text.text = "Player 4: " + player4.lives.ToString();
+        Player1Text.text = "Player 1: " + player1.currentLives.ToString();
+        Player2Text.text = "Player 2: " + player2.currentLives.ToString();
+        Player3Text.text = "Player 3: " + player3.currentLives.ToString();
+        Player4Text.text = "Player 4: " + player4.currentLives.ToString();
     }
 }

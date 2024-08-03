@@ -1,0 +1,30 @@
+{
+    "CrashPinball": {
+        "elo": 1165.5385536472959,
+        "checkpoints": [
+            {
+                "steps": 23141,
+                "file_path": "results\\Test19\\CrashPinball\\CrashPinball-23141.onnx",
+                "reward": 0.42857142857142855,
+                "creation_time": 1720140273.9962652,
+                "auxillary_file_paths": [
+                    "results\\Test19\\CrashPinball\\CrashPinball-23141.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 23141,
+            "file_path": "results\\Test19\\CrashPinball.onnx",
+            "reward": 0.42857142857142855,
+            "creation_time": 1720140273.9962652,
+            "auxillary_file_paths": [
+                "results\\Test19\\CrashPinball\\CrashPinball-23141.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

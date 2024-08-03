@@ -7,12 +7,10 @@ public abstract class PowerUp : MonoBehaviour
     public string id;
     public float cooldown;
 
-    public virtual void EnablePowerUp(PlayerController player)
+    public virtual void EnablePowerUp(MonoBehaviour player)
     {
         GetComponentInChildren<MeshRenderer>().enabled = false;
-        GetComponentInChildren<SphereCollider>().enabled = false;
-        
-
+        GetComponentInChildren<SphereCollider>().enabled = false;     
     }
     
 

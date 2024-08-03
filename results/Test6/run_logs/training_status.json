@@ -1,0 +1,56 @@
+{
+    "CrashPinball": {
+        "checkpoints": [
+            {
+                "steps": 26656,
+                "file_path": "results\\Test6\\CrashPinball\\CrashPinball-26656.onnx",
+                "reward": null,
+                "creation_time": 1717721651.9272141,
+                "auxillary_file_paths": [
+                    "results\\Test6\\CrashPinball\\CrashPinball-26656.pt"
+                ]
+            },
+            {
+                "steps": 499999,
+                "file_path": "results\\Test6\\CrashPinball\\CrashPinball-499999.onnx",
+                "reward": null,
+                "creation_time": 1717726253.995179,
+                "auxillary_file_paths": [
+                    "results\\Test6\\CrashPinball\\CrashPinball-499999.pt"
+                ]
+            },
+            {
+                "steps": 500008,
+                "file_path": "results\\Test6\\CrashPinball\\CrashPinball-500008.onnx",
+                "reward": null,
+                "creation_time": 1717726254.042939,
+                "auxillary_file_paths": [
+                    "results\\Test6\\CrashPinball\\CrashPinball-500008.pt"
+                ]
+            },
+            {
+                "steps": 592164,
+                "file_path": "results\\Test6\\CrashPinball\\CrashPinball-592164.onnx",
+                "reward": 5.875,
+                "creation_time": 1717956877.2466304,
+                "auxillary_file_paths": [
+                    "results\\Test6\\CrashPinball\\CrashPinball-592164.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 592164,
+            "file_path": "results\\Test6\\CrashPinball.onnx",
+            "reward": 5.875,
+            "creation_time": 1717956877.2466304,
+            "auxillary_file_paths": [
+                "results\\Test6\\CrashPinball\\CrashPinball-592164.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

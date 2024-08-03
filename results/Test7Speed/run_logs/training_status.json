@@ -1,0 +1,65 @@
+{
+    "CrashPinball": {
+        "checkpoints": [
+            {
+                "steps": 8192,
+                "file_path": "results\\Test7Speed\\CrashPinball\\CrashPinball-8192.onnx",
+                "reward": null,
+                "creation_time": 1717959192.1675072,
+                "auxillary_file_paths": [
+                    "results\\Test7Speed\\CrashPinball\\CrashPinball-8192.pt"
+                ]
+            },
+            {
+                "steps": 10496,
+                "file_path": "results\\Test7Speed\\CrashPinball\\CrashPinball-10496.onnx",
+                "reward": null,
+                "creation_time": 1717959845.5734086,
+                "auxillary_file_paths": [
+                    "results\\Test7Speed\\CrashPinball\\CrashPinball-10496.pt"
+                ]
+            },
+            {
+                "steps": 12800,
+                "file_path": "results\\Test7Speed\\CrashPinball\\CrashPinball-12800.onnx",
+                "reward": null,
+                "creation_time": 1717960092.7568972,
+                "auxillary_file_paths": [
+                    "results\\Test7Speed\\CrashPinball\\CrashPinball-12800.pt"
+                ]
+            },
+            {
+                "steps": 25856,
+                "file_path": "results\\Test7Speed\\CrashPinball\\CrashPinball-25856.onnx",
+                "reward": 1.75,
+                "creation_time": 1717960359.7461417,
+                "auxillary_file_paths": [
+                    "results\\Test7Speed\\CrashPinball\\CrashPinball-25856.pt"
+                ]
+            },
+            {
+                "steps": 83968,
+                "file_path": "results\\Test7Speed\\CrashPinball\\CrashPinball-83968.onnx",
+                "reward": null,
+                "creation_time": 1717961274.2605314,
+                "auxillary_file_paths": [
+                    "results\\Test7Speed\\CrashPinball\\CrashPinball-83968.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 83968,
+            "file_path": "results\\Test7Speed\\CrashPinball.onnx",
+            "reward": null,
+            "creation_time": 1717961274.2605314,
+            "auxillary_file_paths": [
+                "results\\Test7Speed\\CrashPinball\\CrashPinball-83968.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0.dev0",
+        "torch_version": "2.2.2+cu121"
+    }
+}
