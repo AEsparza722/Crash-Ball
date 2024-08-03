@@ -9,6 +9,7 @@ using Google.Protobuf.Collections;
 using System.Threading;
 using Unity.VisualScripting;
 using System;
+using Unity.MLAgents.Policies;
 
 public class IAController : Agent
 {
@@ -41,8 +42,8 @@ public class IAController : Agent
 
     private void Awake()
     {
-        GameManager.OnRestartGame += RestartPlayer;
-        GameManager.OnWinGame += PlayerWin;
+        GameManager.OnRestartGame.AddListener(RestartPlayer);
+        GameManager.OnWinGame.AddListener(PlayerWin);
     }
 
     private void Start()
@@ -51,7 +52,7 @@ public class IAController : Agent
         currentLives = GameManager.instance.playerLives;
     }
 
-    void RestartPlayer(object sender, EventArgs e)
+    void RestartPlayer()
     {
         currentLives = GameManager.instance.playerLives;
         rb.velocity = Vector3.zero; // Reinicia la velocidad del rigidbody
@@ -66,7 +67,8 @@ public class IAController : Agent
 
     public override void OnEpisodeBegin()
     {
-        GameManager.instance.RestartGame();
+        GameManager.instance.ResetPositions();
+        if (rb == null) return;
         rb.velocity = Vector3.zero; // Reinicia la velocidad del rigidbody
         moveX = 0f; // Reinicia el movimiento
         currentSpeed = IASpeed; // Reinicia la velocidad
@@ -74,6 +76,7 @@ public class IAController : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
     {
+        if (isWin) return;
         var continuousActions = actions.ContinuousActions;
         if (continuousActions.Length >= 3)
         {
@@ -123,6 +126,8 @@ public class IAController : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        if (isWin) return;
+
         float MoveX = Input.GetAxisRaw("Horizontal");
         float sprintAction = Input.GetKey(KeyCode.LeftShift) ? 1f : 0f;
        
@@ -164,6 +169,10 @@ public class IAController : Agent
             Vector3 movement = transform.right * moveX * currentSpeed;
             rb.velocity = movement;
         }
+        else
+        {
+            MoveToCenter();
+        }
     }
 
     public void TakeGoal()
@@ -175,7 +184,7 @@ public class IAController : Agent
         {
             barrier.SetActive(true);
             GameManager.instance.DecrementAlivePlayers();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -303,19 +312,21 @@ public class IAController : Agent
         this.AddReward(-0.6f);
     }
 
-    void PlayerWin(object sender, EventArgs e)
+    void PlayerWin()
     {
         isWin = true;
+        UIManager.instance.winnerText.text = gameObject.name;
+        rb.constraints = RigidbodyConstraints.None;
         animator.SetBool("isRight", false);
         animator.SetBool("isLeft", false);
-        Debug.Log(isWin);
-        StartCoroutine(MoveToCenter());
+        rb.velocity = Vector3.zero;
+        Debug.Log(gameObject.name + " winner");
+        //StartCoroutine(MoveToCenter());
     }
-
-    IEnumerator MoveToCenter()
+    void MoveToCenter()
     {
-        GameObject centerObj = GameObject.FindGameObjectWithTag("BallContainer");
-        yield return new WaitForSeconds(1);
-        rb.velocity = (transform.position - centerObj.transform.position).normalized * 1f;
+        GameObject centerObj = GameObject.FindGameObjectWithTag("CenterObject");
+        Vector3 dir = (centerObj.transform.position - transform.position).normalized;
+        rb.velocity = new Vector3(dir.x, 0, dir.z) * 5;
     }
 }

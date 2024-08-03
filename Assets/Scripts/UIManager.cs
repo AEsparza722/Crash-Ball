@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text Player2Text;
     public TMP_Text Player3Text;
     public TMP_Text Player4Text;
+    public TMP_Text winnerText;
     [SerializeField] IAController player1;
     [SerializeField] IAController player2;
     [SerializeField] IAController player3;

@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 using System;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +13,10 @@ public class GameManager : MonoBehaviour
     Vector3 Player1Pos, Player2Pos, Player3Pos, Player4Pos;
     public static GameManager instance;
     [SerializeField] public int playerLives;
-    public static event EventHandler OnRestartGame;
-    public static event EventHandler OnWinGame;
+    public static UnityEvent OnRestartGame = new UnityEvent();
+    public static UnityEvent OnWinGame = new UnityEvent();
     [SerializeField] public GameObject pauseMenu;
+    [SerializeField] public GameObject winMenu;
     int alivePlayers = 4;
     
 
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }       
 
         Player1Pos = Player1.transform.position;
         Player2Pos = Player2.transform.position;
@@ -49,11 +52,17 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        OnRestartGame?.Invoke();
+    }
+
+    public void ResetPositions()
+    {
         Player1.transform.position = Player1Pos;
         Player2.transform.position = Player2Pos;
         Player3.transform.position = Player3Pos;
         Player4.transform.position = Player4Pos;
-        OnRestartGame?.Invoke(this, EventArgs.Empty);
     }
 
     public void QuitGame()
@@ -78,11 +87,17 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        OnWinGame?.Invoke(this, EventArgs.Empty);
+        OnWinGame?.Invoke();
+        StartCoroutine(ShowWinnerPanel());
     }
 
     public void DecrementAlivePlayers()
     {
         alivePlayers--;
+    }
+    IEnumerator ShowWinnerPanel()
+    {
+        yield return new WaitForSeconds(2f);
+        winMenu.SetActive(true);
     }
 }

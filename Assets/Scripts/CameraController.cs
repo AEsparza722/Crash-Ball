@@ -10,9 +10,9 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnWinGame += ZoomCamera;
+        GameManager.OnWinGame.AddListener(ZoomCamera);
     }
-    public void ZoomCamera(object sender, EventArgs e)
+    public void ZoomCamera()
     {
         zoomCamera.Priority = 11;
     }

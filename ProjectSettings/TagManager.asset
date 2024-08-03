@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Water
   - BallContainer
+  - CenterObject
   layers:
   - Default
   - TransparentFX

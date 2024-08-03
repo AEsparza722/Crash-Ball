@@ -7,11 +7,11 @@ public class BallController : MonoBehaviour
 {
     void Start()
     {
-        GameManager.OnWinGame += Deactivate;
+        GameManager.OnWinGame.AddListener(Deactivate);
     }
 
-    void Deactivate(object sender, EventArgs e)
+    void Deactivate()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);        
     }
 }

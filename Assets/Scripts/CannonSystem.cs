@@ -25,7 +25,7 @@ public class CannonSystem : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnWinGame += StopAll;
+        GameManager.OnWinGame.AddListener(StopAll);
     }
 
     private void Update()
@@ -113,7 +113,7 @@ public class CannonSystem : MonoBehaviour
         currentValueExplosionDark = endValueExplosion;
     }
 
-    void StopAll(object sender, EventArgs e)
+    void StopAll()
     {
         StopAllCoroutines();
         rotateCannon.gameObject.SetActive(false);
