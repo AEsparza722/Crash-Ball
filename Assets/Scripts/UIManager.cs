@@ -30,9 +30,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        Player1Text.text = "Player 1: " + player1.currentLives.ToString();
-        Player2Text.text = "Player 2: " + player2.currentLives.ToString();
-        Player3Text.text = "Player 3: " + player3.currentLives.ToString();
-        Player4Text.text = "Player 4: " + player4.currentLives.ToString();
+        Player1Text.text = player1.currentLives.ToString();
+        Player2Text.text = player2.currentLives.ToString();
+        Player3Text.text = player3.currentLives.ToString();
+        Player4Text.text = player4.currentLives.ToString();
     }
 }

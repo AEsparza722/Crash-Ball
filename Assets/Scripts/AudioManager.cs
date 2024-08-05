@@ -8,8 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
+    //[SerializeField] Slider musicSlider;
+    //[SerializeField] Slider sfxSlider;
 
     private void Awake()
     {
@@ -27,20 +27,21 @@ public class AudioManager : MonoBehaviour
     {
         float musicVolume;
         audioMixer.GetFloat("MusicVolume", out musicVolume);
-        musicSlider.onValueChanged.AddListener(delegate { ChangeMusicVolume(); });
+        //musicSlider.onValueChanged.AddListener(delegate { ChangeMusicVolume(); });
 
         float sfxVolume;
         audioMixer.GetFloat("SFXVolume", out sfxVolume);
-        sfxSlider.onValueChanged.AddListener(delegate { ChangeSFXVolume(); });
+        //sfxSlider.onValueChanged.AddListener(delegate { ChangeSFXVolume(); });
     }
 
     public void ChangeMusicVolume()
     {
-        audioMixer.SetFloat("MusicVolume", musicSlider.value);
+        //audioMixer.SetFloat("MusicVolume", musicSlider.value);
+        //audioMixer.SetFloat("SFXVolume", sfxSlider.value);
     }
 
     public void ChangeSFXVolume()
     {
-        audioMixer.SetFloat("SFXVolume", sfxSlider.value);
+        
     }
 }
