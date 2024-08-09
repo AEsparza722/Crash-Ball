@@ -4,7 +4,7 @@ Welcome to **Beach Ball**! 🌴🏖️
 
 Beach Ball is my fun, beach-themed twist on the classic Crash Ball game from Crash Bash. I'm working on it from scratch to practice my generalist, coding, and technical art skills. It's a labor I work on during my free time, and I can't wait to share it with you!
 
-## Play Test
+## Play Test [HERE](https://ngelsp.itch.io/beach-ball)
 
 Curious to see what Beach Ball is all about? You can play test the current version of the game [here](https://ngelsp.itch.io/beach-ball). Keep in mind, it's still a work in progress, so your feedback would be super helpful!
 
