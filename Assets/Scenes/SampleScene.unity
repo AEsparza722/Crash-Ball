@@ -15477,6 +15477,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e98081a8cc51a6a489884639568148eb, type: 2}
+    - target: {fileID: 1310763960469968654, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310763960469968654, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310763960469968654, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310763960469968654, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1380616608148333137, guid: f9fbccc6d8472834498ca582c6d57603,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15588,6 +15608,26 @@ PrefabInstance:
         type: 3}
       propertyPath: canShot
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541763993225777391, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541763993225777391, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541763993225777391, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541763993225777391, guid: f9fbccc6d8472834498ca582c6d57603,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9014923794682515984, guid: f9fbccc6d8472834498ca582c6d57603,
         type: 3}

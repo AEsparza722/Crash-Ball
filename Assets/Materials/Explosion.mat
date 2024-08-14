@@ -54,8 +54,8 @@ Material:
     m_Floats:
     - _DissolveA: 0.41
     - _DissolveB: 0.63
-    - _DissolveClear: 0.99882734
-    - _DissolveDark: 0.999453
+    - _DissolveClear: 0.98626816
+    - _DissolveDark: 0.49199468
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothstep: 0
