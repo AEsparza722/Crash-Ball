@@ -57,7 +57,7 @@ public class CannonSystem : MonoBehaviour
         canSpawnRotateCannon = false;
 
         
-        yield return new WaitForSeconds(5f); //UnityEngine.Random.Range(25f, 40f)
+        yield return new WaitForSeconds(UnityEngine.Random.Range(25f, 40f));
 
         rotateCannon.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.5f);
