@@ -15551,8 +15551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: e7421bdbbf08f874787c0167ddb8466b,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3170916341473077386, guid: f9fbccc6d8472834498ca582c6d57603,
         type: 3}
       propertyPath: explosionMaterial
