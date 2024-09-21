@@ -423,7 +423,7 @@ MonoBehaviour:
   Player2: {fileID: 1191435860}
   Player3: {fileID: 1245646515}
   Player4: {fileID: 1250754017}
-  playerLives: 20
+  playerLives: 200
   pauseMenu: {fileID: 1073506241}
   winMenu: {fileID: 357702464}
   cameraShakeFeedback: {fileID: 778433826}
@@ -6657,9 +6657,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245654141}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 245654144}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ChangeMusicVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
