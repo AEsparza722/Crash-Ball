@@ -25,6 +25,7 @@ public class IAController : Agent
     float currentSpeed;
     [HideInInspector] public int currentLives;
     [SerializeField] GameObject barrier;
+    private MMF_Player stretchFeedback;
 
     List<GameObject> grabbedBalls = new List<GameObject>();
 
@@ -50,6 +51,7 @@ public class IAController : Agent
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        stretchFeedback = GetComponentInChildren<MMF_Player>();
         currentLives = GameManager.instance.playerLives;
     }
 
@@ -192,9 +194,10 @@ public class IAController : Agent
 
     private void OnCollisionEnter(Collision collision)
     {
+        stretchFeedback.PlayFeedbacks();
         if (collision.gameObject.CompareTag("Ball"))
         {
-            this.AddReward(0.5f);
+            this.AddReward(0.5f);            
         }
     }
 

@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioMixer audioMixer;
     //[SerializeField] Slider musicSlider;
     //[SerializeField] Slider sfxSlider;
+    private bool isMusicMuted = false;
 
     private void Awake()
     {
@@ -36,8 +37,18 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeMusicVolume()
     {
-        //audioMixer.SetFloat("MusicVolume", musicSlider.value);
-        //audioMixer.SetFloat("SFXVolume", sfxSlider.value);
+        //audioMixer.SetFloat("SFXVolume", sfxSlider.value); //not using sliders anymore 
+        if (isMusicMuted)
+        {
+            
+            audioMixer.SetFloat("MasterVolume", 0); 
+            isMusicMuted = false; 
+        }
+        else
+        {
+            audioMixer.SetFloat("MasterVolume", -80); 
+            isMusicMuted = true; 
+        }
     }
 
     public void ChangeSFXVolume()
