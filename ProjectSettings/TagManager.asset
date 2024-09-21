@@ -9,6 +9,7 @@ TagManager:
   - Water
   - BallContainer
   - CenterObject
+  - MMFCameraShake
   layers:
   - Default
   - TransparentFX

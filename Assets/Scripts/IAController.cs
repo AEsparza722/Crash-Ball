@@ -10,6 +10,7 @@ using System.Threading;
 using Unity.VisualScripting;
 using System;
 using Unity.MLAgents.Policies;
+using MoreMountains.Feedbacks;
 
 public class IAController : Agent
 {
@@ -182,7 +183,8 @@ public class IAController : Agent
         currentLives--;
         if (currentLives == 0)
         {
-            barrier.SetActive(true);
+            Invoke("ShakeCamera", .6f);
+            barrier.SetActive(true);            
             GameManager.instance.DecrementAlivePlayers();
             gameObject.SetActive(false);
         }
@@ -328,5 +330,10 @@ public class IAController : Agent
         GameObject centerObj = GameObject.FindGameObjectWithTag("CenterObject");
         Vector3 dir = (centerObj.transform.position - transform.position).normalized;
         rb.velocity = new Vector3(dir.x, 0, dir.z) * 5;
+    }
+
+    void ShakeCamera()
+    {
+        GameManager.instance.cameraShakeFeedback.PlayFeedbacks();
     }
 }

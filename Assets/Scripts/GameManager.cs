@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using System;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using MoreMountains.Feedbacks;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject winMenu;
     int alivePlayers = 4;
+    public MMF_Player cameraShakeFeedback;
     
 
     private void Awake()
@@ -99,5 +101,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         winMenu.SetActive(true);
+    }
+
+    public IEnumerator ShakeCamera(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        cameraShakeFeedback.PlayFeedbacks();
     }
 }
