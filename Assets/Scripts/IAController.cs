@@ -33,6 +33,15 @@ public class IAController : Agent
 
     public RayPerceptionSensorComponent3D rayPerceptionSensor; // Referencia al componente del sensor
 
+    private Vector3[] cornerPositions = new Vector3[]
+    {
+    new Vector3(5.32f, 2.38f, 4.5f),        // Corner 1
+    new Vector3(-4.69f, 2.38f, -5.5f),      // Corner 2
+    new Vector3(5.31f, 2.38f, -5.5f),       // Corner 3
+    new Vector3(-4.68f, 2.38f, 4.48f)       // Corner 4
+    };
+
+    private float penaltyRadius = 2.0f;
 
     public override void Initialize()
     {
@@ -169,6 +178,7 @@ public class IAController : Agent
     {
         if (!isWin)
         {
+            ApplyCornerPenalty();
             Vector3 movement = transform.right * moveX * currentSpeed;
             rb.velocity = movement;
         }
@@ -338,5 +348,18 @@ public class IAController : Agent
     void ShakeCamera()
     {
         GameManager.instance.cameraShakeFeedback.PlayFeedbacks();
+    }
+
+    private void ApplyCornerPenalty()
+    {
+        foreach (Vector3 corner in cornerPositions)
+        {
+            float distanceToCorner = Vector3.Distance(transform.position, corner);
+
+            if (distanceToCorner < penaltyRadius)
+            {
+                AddReward(-0.05f * (penaltyRadius - distanceToCorner));
+            }
+        }
     }
 }

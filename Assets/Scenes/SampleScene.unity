@@ -423,7 +423,7 @@ MonoBehaviour:
   Player2: {fileID: 1191435860}
   Player3: {fileID: 1245646515}
   Player4: {fileID: 1250754017}
-  playerLives: 200
+  playerLives: 20
   pauseMenu: {fileID: 1073506241}
   winMenu: {fileID: 357702464}
   cameraShakeFeedback: {fileID: 778433826}
