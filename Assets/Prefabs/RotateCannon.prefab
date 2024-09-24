@@ -116,8 +116,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 1.5
+      scalar: 1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -665,7 +665,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 22.27
+    angle: 30
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4960,7 +4960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 8848150127058391078, guid: 9dd28d7d9e9aaf74d83059e40a6ff729, type: 3}
-  canShot: 1
+  canShot: 0
   shootCannonExplosion: {fileID: 25976603092908565}
   explosionMaterial: {fileID: 2100000, guid: 24190f8cbb4885f429626aa00ac8c7d6, type: 2}
 --- !u!136 &775737762603938163
@@ -5126,8 +5126,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
-      minScalar: 1.5
+      scalar: 1.5
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5761,7 +5761,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1.22
+      value: 2
       mode: 0
       spread: 0
       speed:

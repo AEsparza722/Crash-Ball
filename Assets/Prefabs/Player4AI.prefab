@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7859458845298104094, guid: 992c3c3dc6733294b8f01f29fcd5848d, type: 3}
+  - {fileID: 2100000, guid: e98081a8cc51a6a489884639568148eb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 6
+    VectorObservationSize: 36
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 4

@@ -35,13 +35,13 @@ public class IAController : Agent
 
     private Vector3[] cornerPositions = new Vector3[]
     {
-    new Vector3(5.32f, 2.38f, 4.5f),        // Corner 1
-    new Vector3(-4.69f, 2.38f, -5.5f),      // Corner 2
-    new Vector3(5.31f, 2.38f, -5.5f),       // Corner 3
-    new Vector3(-4.68f, 2.38f, 4.48f)       // Corner 4
+    new Vector3(5.32f, 1f, 4.5f),        // Corner 1
+    new Vector3(-4.69f, 1f, -5.5f),      // Corner 2
+    new Vector3(5.31f, 1f, -5.5f),       // Corner 3
+    new Vector3(-4.68f, 1f, 4.48f)       // Corner 4
     };
 
-    private float penaltyRadius = 2.0f;
+    private float penaltyRadius = 3.0f;
 
     public override void Initialize()
     {
@@ -75,6 +75,36 @@ public class IAController : Agent
     {
         sensor.AddObservation(transform.position);
         sensor.AddObservation(rb.velocity);
+
+        // Find all balls in the scene (make sure they are tagged as "Ball")
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+
+        // Limit the number of balls observed to avoid too many observations
+        int maxBallsToObserve = 5; // For example, observe up to 5 balls
+        int ballsObserved = 0;
+
+        foreach (GameObject ball in balls)
+        {
+            if (ballsObserved >= maxBallsToObserve) break;
+
+            // Get the ball's position and velocity
+            Vector3 ballPosition = ball.transform.position;
+            Vector3 ballVelocity = ball.GetComponent<Rigidbody>().velocity;
+
+            // Add ball position and velocity to observations
+            sensor.AddObservation(ballPosition); // Where the ball is
+            sensor.AddObservation(ballVelocity); // Where the ball is going
+
+            ballsObserved++;
+        }
+
+        // Add padding if fewer than maxBallsToObserve are present
+        for (int i = ballsObserved; i < maxBallsToObserve; i++)
+        {
+            // Add zeros for missing balls to keep the observation size consistent
+            sensor.AddObservation(Vector3.zero); // Placeholder position
+            sensor.AddObservation(Vector3.zero); // Placeholder velocity
+        }
     }
 
     public override void OnEpisodeBegin()
@@ -90,15 +120,30 @@ public class IAController : Agent
     {
         if (isWin) return;
         var continuousActions = actions.ContinuousActions;
-        if (continuousActions.Length >= 3)
+        if (continuousActions.Length >= 4)
         {
             moveX = continuousActions[0];
             float sprintAction = continuousActions[1];
             currentSpeed = sprintAction > 0.5f ? IASpeed * 2f : IASpeed; //*2
             float KickAction = continuousActions[2];
             float grabBallAction = continuousActions[3];
-           
-            if(KickAction == 1)
+
+            //New code
+            GameObject closestBall = FindClosestBall();
+            if (closestBall != null)
+            {
+                Vector3 directionToBall = (closestBall.transform.position - transform.position).normalized;
+                rb.velocity = new Vector3(moveX, 0f, 0f) * currentSpeed;
+
+                // Adjust AI movement to move toward the closest ball horizontally
+                if (Mathf.Abs(directionToBall.x) > 0.1f)
+                {
+                    rb.velocity = new Vector3(directionToBall.x * currentSpeed, rb.velocity.y, rb.velocity.z);
+                }
+            }
+            //End new code
+
+            if (KickAction == 1)
             {
                 KickBall();            
             }
@@ -134,6 +179,24 @@ public class IAController : Agent
             animator.SetBool("isLeft", false);
         }
 
+    }
+
+    GameObject FindClosestBall()
+    {
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        GameObject closestBall = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject ball in balls)
+        {
+            float distance = Vector3.Distance(transform.position, ball.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestBall = ball;
+            }
+        }
+        return closestBall;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -174,7 +237,7 @@ public class IAController : Agent
 
        
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (!isWin)
         {
@@ -253,7 +316,22 @@ public class IAController : Agent
 
     private void OnDrawGizmos()
     {
+        // Set the color for the corner penalties
+        Gizmos.color = Color.green; // You can change this to any color you prefer
 
+        // Draw spheres at the corner positions to represent the penalty area
+        foreach (Vector3 corner in cornerPositions)
+        {
+            // Draw a sphere at each corner position with the penalty radius
+            Gizmos.DrawWireSphere(corner, penaltyRadius);
+        }
+
+        // Optionally, you can draw the corner points themselves for better visibility
+        Gizmos.color = Color.yellow; // Change color for corner points
+        foreach (Vector3 corner in cornerPositions)
+        {
+            Gizmos.DrawSphere(corner, 0.1f); // Small sphere to indicate the corner point
+        }
     }
 
     void ReleaseBall()
@@ -358,7 +436,7 @@ public class IAController : Agent
 
             if (distanceToCorner < penaltyRadius)
             {
-                AddReward(-0.05f * (penaltyRadius - distanceToCorner));
+                AddReward(-0.1f * (penaltyRadius - distanceToCorner));
             }
         }
     }
