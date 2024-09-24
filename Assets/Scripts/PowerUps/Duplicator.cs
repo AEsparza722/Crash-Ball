@@ -7,6 +7,7 @@ public class Duplicator : MonoBehaviour
     [SerializeField] GameObject ball;
     public bool isActive = false;
     bool canDuplicate = true;
+    public GameObject duplicatorVFX;
 
     private void Update()
     {

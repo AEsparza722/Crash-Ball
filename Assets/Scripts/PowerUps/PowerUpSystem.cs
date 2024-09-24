@@ -59,6 +59,23 @@ public class PowerUpSystem : MonoBehaviour
 
     void PowerUpPicked(object sender, EventArgs eventArgs)
     {
-        StartCoroutine(WaitForPowerUp());
+        //StartCoroutine(WaitForPowerUp());
+
+        Cannon cannon = sender as Cannon;
+
+        if (cannon != null && cannon.powerUp != null)
+        {
+            // Ensure the power-up is picked up by only one player
+            if (isPowerUpActive)
+            {
+                return; // Ignore subsequent pickups while a power-up is active
+            }
+
+            StartCoroutine(WaitForPowerUp());
+
+            // Power-up is now consumed
+            cannon.powerUp = null;
+        }
+
     }
 }

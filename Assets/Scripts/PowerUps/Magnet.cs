@@ -7,6 +7,7 @@ public class Magnet : MonoBehaviour
     [SerializeField] float radius;
     [SerializeField] float force;
     bool isMagnet = true;
+    public GameObject magnetVfx;
 
     private void OnDrawGizmos()
     {

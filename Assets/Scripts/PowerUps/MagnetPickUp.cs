@@ -8,6 +8,7 @@ public class MagnetPickUp : PowerUp
     public override void EnablePowerUp(MonoBehaviour player)
     {
         player.GetComponent<Magnet>().enabled = true;
+        player.GetComponent<Magnet>().magnetVfx.SetActive(true);
         base.EnablePowerUp(player);
         StartCoroutine(DestroyPowerUp(player));
     }
@@ -15,8 +16,8 @@ public class MagnetPickUp : PowerUp
     IEnumerator DestroyPowerUp(MonoBehaviour player)
     {
         yield return new WaitForSeconds(cooldown);
+        player.GetComponent<Magnet>().magnetVfx.SetActive(false);
         player.GetComponent<Magnet>().enabled = false;
         Destroy(gameObject);
     }
-
 }

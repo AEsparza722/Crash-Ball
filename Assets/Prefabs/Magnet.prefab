@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2352389173351186152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -59,6 +59,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -136,6 +138,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3340389520510464835}
+  - {fileID: 1543601874442295375}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6967394878726414293
@@ -152,4 +155,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Magnet
   cooldown: 10
-  magnet: {fileID: -2421430230367451217, guid: e7bedf03ee6525e48a43e3057520b67e, type: 3}
+--- !u!1001 &1332808759736511151
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6833100304731327392}
+    m_Modifications:
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301336247067289568, guid: c1263e650d148994c8666ac8bc9c1bdf,
+        type: 3}
+      propertyPath: m_Name
+      value: WindVFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1263e650d148994c8666ac8bc9c1bdf, type: 3}
+--- !u!4 &1543601874442295375 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 510295684237046496, guid: c1263e650d148994c8666ac8bc9c1bdf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1332808759736511151}
+  m_PrefabAsset: {fileID: 0}
