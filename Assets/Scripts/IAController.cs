@@ -41,7 +41,7 @@ public class IAController : Agent
     new Vector3(-4.68f, 1f, 4.48f)       // Corner 4
     };
 
-    private float penaltyRadius = 3.0f;
+    private float penaltyRadius = 2.0f;
 
     public override void Initialize()
     {
@@ -436,7 +436,7 @@ public class IAController : Agent
 
             if (distanceToCorner < penaltyRadius)
             {
-                AddReward(-0.1f * (penaltyRadius - distanceToCorner));
+                AddReward(-0.2f * (penaltyRadius - distanceToCorner));
             }
         }
     }
