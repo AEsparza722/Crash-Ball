@@ -10,15 +10,24 @@
                 "auxillary_file_paths": [
                     "results\\Test28\\CrashPinball\\CrashPinball-288096.pt"
                 ]
+            },
+            {
+                "steps": 389216,
+                "file_path": "results\\Test28\\CrashPinball\\CrashPinball-389216.onnx",
+                "reward": -7.82075560092926,
+                "creation_time": 1727288917.4929802,
+                "auxillary_file_paths": [
+                    "results\\Test28\\CrashPinball\\CrashPinball-389216.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 288096,
+            "steps": 389216,
             "file_path": "results\\Test28\\CrashPinball.onnx",
-            "reward": -18.35820062458515,
-            "creation_time": 1727237071.6393442,
+            "reward": -7.82075560092926,
+            "creation_time": 1727288917.4929802,
             "auxillary_file_paths": [
-                "results\\Test28\\CrashPinball\\CrashPinball-288096.pt"
+                "results\\Test28\\CrashPinball\\CrashPinball-389216.pt"
             ]
         }
     },

@@ -423,7 +423,7 @@ MonoBehaviour:
   Player2: {fileID: 1191435860}
   Player3: {fileID: 1245646515}
   Player4: {fileID: 1250754017}
-  playerLives: 20000
+  playerLives: 20
   pauseMenu: {fileID: 1073506241}
   winMenu: {fileID: 357702464}
   cameraShakeFeedback: {fileID: 778433826}
@@ -5798,17 +5798,20 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: feb019678ed5c364aabfca84fa642f43,
+        type: 3}
     - target: {fileID: 3578861622220574913, guid: f9fbccc6d8472834498ca582c6d57603,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: feb019678ed5c364aabfca84fa642f43,
+        type: 3}
     - target: {fileID: 5393939493180796602, guid: f9fbccc6d8472834498ca582c6d57603,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: feb019678ed5c364aabfca84fa642f43,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
